@@ -1,0 +1,50 @@
+# Cadastra People
+
+## Descrição
+Serviço do tipo API REST, para cadastro de pessoas com score e endereço. Em nossa lógica de negócio uma pessoa possui: Nome, idade, cep, estado, cidade, bairro, logradouro, telefone, score
+de 0 a 1000.
+
+Premissas
+
+## Tecnologias Utilizadas
+- **Java 17**
+- **H2 Database** (em memória)
+- **Maven** (gerenciador de dependências)
+- **ViaCEP API** (integração externa para busca de endereços)
+- **Swagger 3** (documentação e testes de endpoints)
+
+## Funcionalidades
+- **Cria pessoa**: A partir de dados básicos e CEP usuários ADMIN podem criar uma pessoa.
+- **Atualização e deleção lógica**: Dados não são excluídos no banco de dados
+- **Busca Paginada**: Suporte a busca paginada para facilitar a navegação e a recuperação de dados em partes. Suporta filtro por nome, idade e cep. Para todos os tipos de usuário (ADMIN e USER).
+
+## Pré-requisitos
+- **Java 17**: Certifique-se de ter o Java 17 instalado em sua máquina.
+- **Maven**: Certifique-se de ter o Maven instalado e configurado.
+
+## Configuração do Banco de Dados
+A API utiliza o banco de dados H2 em memória.
+
+## Executando a Aplicação
+
+### Clone o repositório:
+
+```
+git clone <URL_DO_REPOSITORIO>
+cd <NOME_DO_DIRETORIO>
+```
+
+### Compile e execute a aplicação usando Maven:
+
+
+```
+mvn clean install
+mvn spring-boot:run
+```
+
+Acesse a aplicação em http://localhost:8080.
+
+## Documentação e Testes de Endpoints
+A API utiliza o Swagger 3 para documentar e permitir testes dos endpoints. Após executar a aplicação, para acessar a documentação interativa, acesse http://localhost:8080/cadastra-people-doc ou http://localhost:8080/swagger-ui/index.html.
+
+O contrato da api pode ser visualizado no projeto dentro da pasta swagger.
