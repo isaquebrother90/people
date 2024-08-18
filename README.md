@@ -65,3 +65,11 @@ docker-compose up --build
 A API utiliza o Swagger 3 para documentar e permitir testes dos endpoints. Após executar a aplicação, para acessar a documentação interativa, acesse http://localhost:8080/cadastra-people-doc ou http://localhost:8080/swagger-ui/index.html.
 
 O contrato da api pode ser visualizado no projeto dentro da pasta swagger.
+
+Para verificar os testes integrados disponíveis execute:
+```
+mvn test
+```
+
+### TO DO:
+- Testes unitários do controlador de pessoa e integração com api externa ViaCEP.
