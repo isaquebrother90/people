@@ -21,20 +21,29 @@ Premissas
 ## Pré-requisitos
 - **Java 17**: Certifique-se de ter o Java 17 instalado em sua máquina.
 - **Maven**: Certifique-se de ter o Maven instalado e configurado.
+- **Docker**: *Caso queira utilizar essa opção para rodar a aplicação. Baixe o Docker Desktop ou outras soluções de gerenciamento de contêineres como Rancher, etc.
+- **Docker Compose**: *Caso queira utilizar essa opção para rodar a aplicação. Baixando o Docker Desktop o Docker Compose já vem instalado. O Rancher vem com Rancher Compose que suporta arquivos docker-compose.yml do tipo v1 e v2.
 
 ## Configuração do Banco de Dados
 A API utiliza o banco de dados H2 em memória.
 
 ## Executando a Aplicação
 
-### Clone o repositório:
+Disponibilizo duas formas de executar a aplicação:
+
+- 1- Baixando e instalando ferramentas como JDK, Maven e executando comandos
+- 2- Rodando um arquivo docker-compose
+
+### 1- Baixando e instalando ferramentas como JDK, Maven e executando comandos
+
+#### Clone o repositório:
 
 ```
 git clone <URL_DO_REPOSITORIO>
 cd <NOME_DO_DIRETORIO>
 ```
 
-### Compile e execute a aplicação usando Maven:
+#### Compile e execute a aplicação usando Maven:
 
 
 ```
@@ -43,6 +52,14 @@ mvn spring-boot:run
 ```
 
 Acesse a aplicação em http://localhost:8080.
+
+
+### 2- Rodando um arquivo docker-compose
+
+#### Após iniciar o seu gerenciador de contêineres, no terminal, navegue até a raiz do seu projeto e execute o comando:
+```
+docker-compose up --build
+```
 
 ## Documentação e Testes de Endpoints
 A API utiliza o Swagger 3 para documentar e permitir testes dos endpoints. Após executar a aplicação, para acessar a documentação interativa, acesse http://localhost:8080/cadastra-people-doc ou http://localhost:8080/swagger-ui/index.html.
