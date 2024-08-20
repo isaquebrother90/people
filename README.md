@@ -72,4 +72,4 @@ mvn test
 ```
 
 ### TO DO:
-- Testes unitários do controlador de pessoa e integração com api externa ViaCEP.
+- Testes unitários do controlador de pessoa e da integração com api externa ViaCEP.
