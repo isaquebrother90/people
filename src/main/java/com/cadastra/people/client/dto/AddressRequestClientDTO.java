@@ -1,9 +1,9 @@
-package com.cadastra.people.client;
+package com.cadastra.people.client.dto;
 
 import lombok.Data;
 
 @Data
-public class AddressRequestClient {
+public class AddressRequestClientDTO {
     private String cep;
     private String logradouro;
     private String complemento;

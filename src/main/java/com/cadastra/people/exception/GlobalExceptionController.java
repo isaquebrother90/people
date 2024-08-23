@@ -77,4 +77,19 @@ public class GlobalExceptionController extends ResponseEntityExceptionHandler {
                 "Invalid credentials: " + detail, instance, new Date());
         return new ResponseEntity<>(error, HttpStatus.UNAUTHORIZED);
     }
+
+    @ExceptionHandler(AddressNotFoundException.class)
+    public ResponseEntity<MessageExceptionHandler> handleAddressNotFoundException(AddressNotFoundException e,
+                                                                              WebRequest request) {
+        log.error("Erro ao buscar endereço", e);
+        String type = URI.create("http://localhost:8080").toString();
+        String title = "Erro ao buscar CEP";
+        String detail = e.getMessage();
+        if (detail == null) detail = e.toString();
+        String instance = request.getDescription(false).substring(4);
+
+        MessageExceptionHandler error = new MessageExceptionHandler(type, title, HttpStatus.UNPROCESSABLE_ENTITY.value(),
+                "CEP inválido ou não encontrado: " + detail, instance, new Date());
+        return new ResponseEntity<>(error, HttpStatus.UNPROCESSABLE_ENTITY);
+    }
 }

@@ -1,6 +1,6 @@
 package com.cadastra.people.service.impl;
 
-import com.cadastra.people.client.AddressRequestClient;
+import com.cadastra.people.client.dto.AddressRequestClientDTO;
 import com.cadastra.people.entity.Address;
 import com.cadastra.people.entity.Person;
 import com.cadastra.people.repository.PersonRepository;
@@ -38,7 +38,7 @@ public class PersonServiceImpl implements PersonService {
         }
         person.setScoreDescription(ScoreCalc.classifyScore(person.getScore()));
 
-        AddressRequestClient requestResponse = addressService.buscarEndereco(person.getAddress().getCep());
+        AddressRequestClientDTO requestResponse = addressService.buscarEndereco(person.getAddress().getCep());
 
         person.setAddress(new Address(
                 null,
